@@ -92,10 +92,14 @@ def run_tests(method) -> None:
     print()
     
     # List Length of 100000 Test #
-    create_array(array=arr, length=100000)
-    print(f"List of Length {len(arr)} Test:")
-    compare_arrays(array=arr, method=method)
-    print()
+    if method.__name__ not in ["insertion_sort", "selection_sort"]:
+        create_array(array=arr, length=100000)
+        print(f"List of Length {len(arr)} Test:")
+        compare_arrays(array=arr, method=method)
+        print()
+    else:
+        print("Skipping Test cause specified algorithm is too slow.")
+        print()
     
     # Assertion Tests #
     assertion_tests(method)
