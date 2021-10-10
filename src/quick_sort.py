@@ -1,5 +1,6 @@
 from colorama import Fore, Style, Back
 from random import randint
+from test import run_tests
 from typing import List
 from time import time
 
@@ -23,9 +24,5 @@ def quick_sort(array: List[int], left: int, right: int) -> None:
     quick_sort(array=array, left=part+1, right=right)
 
 
-def run_tests() -> None:
-    pass
-
-
 if __name__ == "__main__":
-    run_tests()
+    run_tests(quick_sort)
