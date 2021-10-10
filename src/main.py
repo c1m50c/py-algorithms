@@ -14,9 +14,9 @@ def help():
     print(f"3. all {Fore.BLUE}// Runs all algorithms{Fore.RESET}")
     print(f"4. quick_sort {Fore.BLUE}// Runs QuickSort algorithm{Fore.RESET}")
     print(f"5. merge_sort {Fore.BLUE}// Runs MergeSort algorithm{Fore.RESET}")
-    print(f"5. insertion_sort {Fore.BLUE}// Runs InsertionSort algorithm{Fore.RESET}")
-    print(f"6. selction_sort {Fore.BLUE}// Runs SelectionSort algorithm{Fore.RESET}")
-    print(f"7. bubble_sort {Fore.BLUE}// Runs BubbleSort algorithm{Fore.RESET}")
+    print(f"6. insertion_sort {Fore.BLUE}// Runs InsertionSort algorithm{Fore.RESET}")
+    print(f"7. selction_sort {Fore.BLUE}// Runs SelectionSort algorithm{Fore.RESET}")
+    print(f"8. bubble_sort {Fore.BLUE}// Runs BubbleSort algorithm{Fore.RESET}")
 
 
 def run_all_algorithms():
