@@ -1,8 +1,7 @@
 from test import run_tests
-from typing import List
 
 
-def insertion_sort(array: List[int]) -> None:
+def insertion_sort(array: list[int]) -> None:
     """
         # Insertion Sort
         ### Complexities:

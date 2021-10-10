@@ -1,8 +1,7 @@
 from test import run_tests
-from typing import List
 
 
-def partition(array: List[int], left: int, right: int) -> int:
+def partition(array: list[int], left: int, right: int) -> int:
     pivot: int = array[right]
     i: int = left - 1
     for j in range(left, right):
@@ -13,7 +12,7 @@ def partition(array: List[int], left: int, right: int) -> int:
     return i + 1
 
 
-def quick_sort(array: List[int], left: int, right: int) -> None:
+def quick_sort(array: list[int], left: int, right: int) -> None:
     """
         # Quick Sort
         ### Complexities:

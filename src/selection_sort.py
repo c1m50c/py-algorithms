@@ -1,8 +1,7 @@
 from test import run_tests
-from typing import List
 
 
-def selection_sort(array: List[int]) -> None:
+def selection_sort(array: list[int]) -> None:
     """
         # Selection Sort
         ### Complexities:

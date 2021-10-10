@@ -1,8 +1,7 @@
 from test import run_tests
-from typing import List
 
 
-def make_heap(array: List[int], length: int, idx: int) -> None:
+def make_heap(array: list[int], length: int, idx: int) -> None:
     largest: int = idx
     left: int = 2 * idx + 1
     right: int = 2 * idx + 2
@@ -18,7 +17,7 @@ def make_heap(array: List[int], length: int, idx: int) -> None:
         make_heap(array=array, length=length, idx=largest)
 
 
-def heap_sort(array: List[int]) -> None:
+def heap_sort(array: list[int]) -> None:
     """
         # Heap Sort
         ### Complexities:

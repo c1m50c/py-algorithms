@@ -1,8 +1,7 @@
 from test import run_tests
-from typing import List
 
 
-def bubble_sort(array: List[int]) -> None:
+def bubble_sort(array: list[int]) -> None:
     """
         # Bubble Sort
         ### Complexities:

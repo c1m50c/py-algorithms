@@ -1,8 +1,7 @@
 from test import run_tests
-from typing import List
 
 
-def merge_sort(array: List[int]) -> None:
+def merge_sort(array: list[int]) -> None:
     """
         # Merge Sort
         ### Complexities:
@@ -15,8 +14,8 @@ def merge_sort(array: List[int]) -> None:
     """
     if len(array) > 1:
         # Divide & Conquer
-        left: List[int] = array[:len(array) // 2]
-        right: List[int] = array[len(array) // 2:]
+        left: list[int] = array[:len(array) // 2]
+        right: list[int] = array[len(array) // 2:]
         merge_sort(array=left)
         merge_sort(array=right)
         
