@@ -4,7 +4,13 @@ from typing import List
 
 def insertion_sort(array: List[int]) -> None:
     """
-        Insertion Sort: O(n^2)
+        # Insertion Sort
+        ```py
+        Worst Case Time Complexity == O(n^2)
+        Average Case Time Complexity == O(n^2)
+        Best Case Time Complexity == O(n)
+        Space Complexity == O(1)
+        ```
     """
     for i in range(1, len(array)):
         j: int = i

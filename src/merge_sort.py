@@ -4,7 +4,13 @@ from typing import List
 
 def merge_sort(array: List[int]) -> None:
     """
-        Merge Sort: O(n log n)
+        # Merge Sort
+        ```py
+        Worst Case Time Complexity == O(n log n)
+        Average Case Time Complexity == O(n log n)
+        Best Case Time Complexity == O(n log n)
+        Space Complexity == O(n)
+        ```
     """
     if len(array) > 1:
         # Divide & Conquer
