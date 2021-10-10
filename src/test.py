@@ -6,6 +6,14 @@ from typing import List
 from time import time
 
 
+def sort_array(array: List[int], method) -> None:
+    # Todo: This is a messy fix to the issue, fix later
+    if method.__name__ == "quick_sort":
+        method(array, 0, len(array) - 1)
+    else:
+        method(array)
+
+
 def get_method_name(method) -> str:
     string: str = method.__name__
     string_arr: List[str] = string.split("_")
@@ -28,7 +36,7 @@ def get_array_as_str(array: List[int]) -> str:
 def compare_arrays(array: List[int], method) -> None:
     print(f"{Fore.RED}Unsorted List: {get_array_as_str(array=array)}{Fore.RESET}")
     begin_time: float = time()
-    method(array, 0, len(array) - 1) # Todo: This will need to be changed for non-like quicksort functions
+    sort_array(array=array, method=method)
     end_time: float = time()
     print(f"{Fore.GREEN}Sorted List: {get_array_as_str(array=array)}{Fore.RESET}")
     print(f"Time Elapsed: {end_time - begin_time}s")
@@ -51,10 +59,9 @@ def assertion_tests(method) -> None:
     array_two_sorted: List[int] = [-66, 0, 2, 2, 3, 4, 5, 6, 33]
     array_three_sorted: List[int] = [-34, 0, 1, 2, 4, 13, 15]
     
-    
-    method(array_one, 0, len(array_one) - 1) # Todo: This will need to be changed for non-like quicksort functions
-    method(array_two, 0, len(array_two) - 1) # Todo: This will need to be changed for non-like quicksort functions
-    method(array_three, 0, len(array_three) - 1) # Todo: This will need to be changed for non-like quicksort functions
+    sort_array(array=array_one, method=method)
+    sort_array(array=array_two, method=method)
+    sort_array(array=array_three, method=method)
     
     print(f"{arr_is_arr(array_method_sorted=array_one, array_hand_sorted=array_one_sorted)}")
     print(f"{arr_is_arr(array_method_sorted=array_two, array_hand_sorted=array_two_sorted)}")
