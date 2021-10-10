@@ -4,6 +4,7 @@ from bubble_sort import bubble_sort
 from quick_sort import quick_sort
 from merge_sort import merge_sort
 from colorama import Fore, Style
+from heap_sort import heap_sort
 from test import run_tests
 
 
@@ -17,6 +18,7 @@ def help():
     print(f"6. insertion_sort {Fore.BLUE}// Runs InsertionSort algorithm{Fore.RESET}")
     print(f"7. selction_sort {Fore.BLUE}// Runs SelectionSort algorithm{Fore.RESET}")
     print(f"8. bubble_sort {Fore.BLUE}// Runs BubbleSort algorithm{Fore.RESET}")
+    print(f"9. heap_sort {Fore.BLUE}// Runs HeapSort algorithm{Fore.RESET}")
 
 
 def run_all_algorithms():
@@ -30,6 +32,8 @@ def run_all_algorithms():
     run_tests(selection_sort)
     print()
     run_tests(bubble_sort)
+    print()
+    run_tests(heap_sort)
 
 
 # This is redundant, find a better way to run singular tests.
@@ -38,6 +42,7 @@ def run_merge_sort(): run_tests(merge_sort)
 def run_insertion_sort(): run_tests(insertion_sort)
 def run_selection_sort(): run_tests(selection_sort)
 def run_bubble_sort(): run_tests(bubble_sort)
+def run_heap_sort(): run_tests(heap_sort)
 
 
 COMMANDS = {
@@ -49,6 +54,7 @@ COMMANDS = {
     "insertion_sort": [run_insertion_sort],
     "selection_sort": [run_selection_sort],
     "bubble_sort": [run_bubble_sort],
+    "heap_sort": [run_heap_sort],
 }
 
 
