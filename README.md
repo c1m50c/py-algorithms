@@ -1,2 +1,2 @@
 # py-algorithms
- Some algorithms implemented in Python.
+Some algorithms implemented in Python.
