@@ -69,7 +69,7 @@ def assertion_tests(method) -> None:
 
 
 def run_tests(method) -> None:
-    print(f"<====={get_method_name(method)}=====>")
+    print(f"{Style.BRIGHT}{Fore.YELLOW}<====={Fore.CYAN}{get_method_name(method)}{Fore.YELLOW}=====>{Fore.RESET}{Style.RESET_ALL}")
     
     arr: List[int] = [  ]
     
@@ -100,4 +100,4 @@ def run_tests(method) -> None:
     # Assertion Tests #
     assertion_tests(method)
     
-    print(f"<==========>")
+    print(f"{Style.BRIGHT}{Fore.YELLOW}<==========>{Fore.RESET}{Style.RESET_ALL}")
