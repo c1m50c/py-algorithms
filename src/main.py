@@ -22,6 +22,10 @@ def run_all_algorithms():
     run_tests(quick_sort)
     print()
     run_tests(merge_sort)
+    print()
+    run_tests(insertion_sort)
+    print()
+    run_tests(selection_sort)
 
 
 # This is redundant, find a better way to run singular tests.
