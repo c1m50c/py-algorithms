@@ -16,6 +16,7 @@ def partition(array: List[int], left: int, right: int) -> int:
 def quick_sort(array: List[int], left: int, right: int) -> None:
     """
         # Quick Sort
+        ### Complexities:
         ```py
         Worst Case Time Complexity == O(n^2)
         Average Case Time Complexity == O(n log n)

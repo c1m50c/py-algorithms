@@ -5,11 +5,12 @@ from typing import List
 def insertion_sort(array: List[int]) -> None:
     """
         # Insertion Sort
+        ### Complexities:
         ```py
         Worst Case Time Complexity == O(n^2)
         Average Case Time Complexity == O(n^2)
         Best Case Time Complexity == O(n)
-        Space Complexity == O(1)
+        Space Complexity == O(n) total, O(1) auxiliary
         ```
     """
     for i in range(1, len(array)):

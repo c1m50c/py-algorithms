@@ -5,6 +5,7 @@ from typing import List
 def merge_sort(array: List[int]) -> None:
     """
         # Merge Sort
+        ### Complexities:
         ```py
         Worst Case Time Complexity == O(n log n)
         Average Case Time Complexity == O(n log n)

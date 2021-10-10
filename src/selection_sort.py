@@ -5,6 +5,7 @@ from typing import List
 def selection_sort(array: List[int]) -> None:
     """
         # Selection Sort
+        ### Complexities:
         ```py
         Worst Case Time Complexity == O(n^2)
         Average Case Time Complexity == O(n^2)

@@ -93,7 +93,7 @@ def run_tests(method) -> None:
     
     # List Length of 100000 Test #
     # Skip slow algorithms, this test will butcher them.
-    if method.__name__ not in ["insertion_sort", "selection_sort"]:
+    if method.__name__ not in ["insertion_sort", "selection_sort", "bubble_sort"]:
         create_array(array=arr, length=100000)
         print(f"List of Length {len(arr)} Test:")
         compare_arrays(array=arr, method=method)
