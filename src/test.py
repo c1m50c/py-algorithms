@@ -55,17 +55,25 @@ def assertion_tests(method) -> None:
     array_one: List[int] = [-1, 2, 1, 3, -15, 0, 5, 12, 4, 6]
     array_two: List[int] = [0, 3, 4, 5, 6, 2, 33, 2, -66]
     array_three: List[int] = [-34, 4, 2, 0, 1, 15, 13]
+    array_four: List[int] = [-9, -9, -8, -1, -3, -5, -0]
+    array_five: List[int] = [0, 5, 2, 3, 2, 9, 8, 4, 9, 7]
     array_one_sorted: List[int] = [-15, -1, 0, 1, 2, 3, 4, 5, 6, 12]
     array_two_sorted: List[int] = [-66, 0, 2, 2, 3, 4, 5, 6, 33]
     array_three_sorted: List[int] = [-34, 0, 1, 2, 4, 13, 15]
+    array_four_sorted: List[int] = [-9, -9, -8, -5, -3, -1, -0]
+    array_five_sorted: List[int] = [0, 2, 2, 3, 4, 5, 7, 8, 9, 9]
     
     sort_array(array=array_one, method=method)
     sort_array(array=array_two, method=method)
     sort_array(array=array_three, method=method)
+    sort_array(array=array_four, method=method)
+    sort_array(array=array_five, method=method)
     
     print(f"{arr_is_arr(array_method_sorted=array_one, array_hand_sorted=array_one_sorted)}")
     print(f"{arr_is_arr(array_method_sorted=array_two, array_hand_sorted=array_two_sorted)}")
     print(f"{arr_is_arr(array_method_sorted=array_three, array_hand_sorted=array_three_sorted)}")
+    print(f"{arr_is_arr(array_method_sorted=array_four, array_hand_sorted=array_four_sorted)}")
+    print(f"{arr_is_arr(array_method_sorted=array_five, array_hand_sorted=array_five_sorted)}")
 
 
 def run_tests(method) -> None:
