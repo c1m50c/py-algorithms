@@ -1,3 +1,4 @@
+from insertion_sort import insertion_sort
 from quick_sort import quick_sort
 from merge_sort import merge_sort
 from colorama import Fore, Style
@@ -11,6 +12,7 @@ def help():
     print(f"3. all {Fore.BLUE}// Runs all algorithms{Fore.RESET}")
     print(f"4. quick_sort {Fore.BLUE}// Runs QuickSort algorithm{Fore.RESET}")
     print(f"5. merge_sort {Fore.BLUE}// Runs MergeSort algorithm{Fore.RESET}")
+    print(f"5. insertion_sort {Fore.BLUE}// Runs InsertionSort algorithm{Fore.RESET}")
 
 
 def run_all_algorithms():
@@ -23,6 +25,7 @@ def run_all_algorithms():
 # This is redundant, find a better way to run singular tests.
 def run_quick_sort(): run_tests(quick_sort)
 def run_merge_sort(): run_tests(merge_sort)
+def run_insertion_sort(): run_tests(insertion_sort)
 
 
 COMMANDS = {
@@ -31,6 +34,7 @@ COMMANDS = {
     "all": [run_all_algorithms],
     "quick_sort": [run_quick_sort],
     "merge_sort": [run_merge_sort],
+    "insertion_sort": [run_insertion_sort],
 }
 
 
