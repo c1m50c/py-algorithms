@@ -64,6 +64,8 @@ def main():
         if inp.lower() in COMMANDS.keys():
             for func in COMMANDS[inp.lower()]:
                 func()
+        else:
+            print(f"Command {Style.BRIGHT}{Fore.RED}'{inp}'{Fore.RESET}{Style.RESET_ALL} does not exist, try {Style.BRIGHT}{Fore.GREEN}'help' for a list of commands{Fore.RESET}{Style.RESET_ALL}.")
 
 
 if __name__ == "__main__":
