@@ -1,4 +1,4 @@
-from test import run_tests
+from sorting_tests import run_tests
 
 
 def make_heap(array: list[int], length: int, idx: int) -> None:
@@ -28,6 +28,7 @@ def heap_sort(array: list[int]) -> None:
         Space Complexity == O(n) total, O(1) auxiliary
         ```
     """
+    
     for i in range(len(array) // 2 - 1, -1, -1):
         make_heap(array=array, length=len(array), idx=i)
     

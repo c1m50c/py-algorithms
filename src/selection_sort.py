@@ -1,4 +1,4 @@
-from test import run_tests
+from sorting_tests import run_tests
 
 
 def selection_sort(array: list[int]) -> None:
@@ -12,6 +12,7 @@ def selection_sort(array: list[int]) -> None:
         Space Complexity == O(1)
         ```
     """
+    
     for i in range(0, len(array) - 1):
         current_minimum_idx: int = i
         for j in range(i + 1, len(array)):

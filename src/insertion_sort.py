@@ -1,4 +1,4 @@
-from test import run_tests
+from sorting_tests import run_tests
 
 
 def insertion_sort(array: list[int]) -> None:
@@ -12,6 +12,7 @@ def insertion_sort(array: list[int]) -> None:
         Space Complexity == O(n) total, O(1) auxiliary
         ```
     """
+    
     for i in range(1, len(array)):
         j: int = i
         while array[j - 1] > array[j] and j > 0:

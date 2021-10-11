@@ -1,4 +1,4 @@
-from test import run_tests
+from sorting_tests import run_tests
 
 
 def merge_sort(array: list[int]) -> None:
@@ -12,6 +12,7 @@ def merge_sort(array: list[int]) -> None:
         Space Complexity == O(n)
         ```
     """
+    
     if len(array) > 1:
         # Divide & Conquer
         left: list[int] = array[:len(array) // 2]

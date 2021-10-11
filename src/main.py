@@ -1,11 +1,11 @@
 from selection_sort import selection_sort
 from insertion_sort import insertion_sort
+from sorting_tests import run_tests
 from bubble_sort import bubble_sort
 from quick_sort import quick_sort
 from merge_sort import merge_sort
 from colorama import Fore, Style
 from heap_sort import heap_sort
-from test import run_tests
 
 
 def help():

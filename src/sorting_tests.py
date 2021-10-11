@@ -1,6 +1,7 @@
 # Todo: Clean this up #
 
 from colorama import Fore, Style, Back
+from sys import setrecursionlimit
 from random import randint
 from time import time
 
@@ -48,7 +49,6 @@ def arr_is_arr(array_method_sorted: list[int], array_hand_sorted: list[int]) -> 
     return f"{color}{get_array_as_str(array_method_sorted)} == {get_array_as_str(array_hand_sorted)} -> {is_same}{Fore.RESET}"
 
 
-
 def assertion_tests(method) -> None:
     print(f"Assertion Tests:")
     array_one: list[int] = [-1, 2, 1, 3, -15, 0, 5, 12, 4, 6]
@@ -76,6 +76,7 @@ def assertion_tests(method) -> None:
 
 
 def run_tests(method) -> None:
+    setrecursionlimit(5000)
     print(f"{Style.BRIGHT}{Fore.YELLOW}<====={Fore.CYAN}{get_method_name(method)}{Fore.YELLOW}=====>{Fore.RESET}{Style.RESET_ALL}")
     
     arr: list[int] = [  ]
@@ -102,6 +103,18 @@ def run_tests(method) -> None:
     # Skip slow algorithms, this test will butcher them.
     if method.__name__ not in ["insertion_sort", "selection_sort", "bubble_sort"]:
         create_array(array=arr, length=100000)
+        print(f"List of Length {len(arr)} Test:")
+        compare_arrays(array=arr, method=method)
+        print()
+    else:
+        print("Skipping Test cause specified algorithm is too slow.")
+        print()
+    
+    # List Length of 1000000 Test #
+    # Skip slow algorithms, this test will butcher them.
+    if method.__name__ not in ["insertion_sort", "selection_sort", "bubble_sort", "quick_sort"]:
+        # We skip 'quick_sort' cause in my testing it crashes python on one million, maybe to recurssive?
+        create_array(array=arr, length=1000000)
         print(f"List of Length {len(arr)} Test:")
         compare_arrays(array=arr, method=method)
         print()
