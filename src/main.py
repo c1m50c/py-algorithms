@@ -11,6 +11,11 @@ from colorama import Fore, Style
 
 
 def help():
+    """
+        # Help ~ Command
+        Prints all valid commands to the output.
+    """
+    # Todo: Automatically generate this stuff based on the COMMANDS dictionary
     print("Help:")
     print(f"1. help {Fore.BLUE}// Gives valid commands{Fore.RESET}")
     print(f"2. quit {Fore.BLUE}// Quits{Fore.RESET}")
@@ -24,6 +29,10 @@ def help():
 
 
 def run_all_algorithms():
+    """
+        # Run All Algorithms ~ Command
+        Runs all the algorithms.
+    """
     print("Running all Algorithms...")
     run_tests(quick_sort)
     print()
@@ -61,6 +70,10 @@ COMMANDS = {
 
 
 def main():
+    """
+        # Main
+        The Main Function! Currently serving as a shell for this project.
+    """
     while True:
         inp = input(f"{Style.BRIGHT}{Fore.MAGENTA}py-algorithms{Fore.GREEN}:${Fore.RESET}{Style.RESET_ALL} ")
         if inp.lower() in COMMANDS.keys():
