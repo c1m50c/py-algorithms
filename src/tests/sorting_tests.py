@@ -1,7 +1,6 @@
-# Todo: Clean this up #
-
-from colorama import Fore, Style, Back
+from colorama import Fore, Style
 from collections.abc import Callable
+from .helper_functions import get_array_as_str, get_method_name
 from sys import setrecursionlimit
 from random import randint
 from time import time
@@ -15,38 +14,19 @@ def sort_array(array: list[int], method: Callable[[list[int]], None]) -> None:
         method(array)
 
 
-def get_method_name(method: Callable[[], any]) -> str:
-    """
-        # Get Method Name
-        Returns the method's name as PascalCase, example below.
-        ```py
-        get_method_name(quick_sort()) # Returns "QuickSort"
-        ```
-        ### Parameters:
-        ```py
-        method: Callable[[], any] # Method you would like to get the name of.
-        ```
-    """
-    string: str = method.__name__
-    string_arr: list[str] = string.split("_")
-    string = ""
-    for s in string_arr:
-        string += s.capitalize()
-    return string
-
-
 def create_array(array: list[int], length: int = 1000) -> None:
     """
         # Create Array
         Creates an array (list) to be used for testing sorting algorithms.
+        ### Parameters:
+        ```py
+        array: list[int] # Array to fill.
+        length: int = 1000 # Desired array length.
+        ```
     """
     array.clear()
     for i in range(0, length):
         array.append(randint(-100, 100))
-
-
-def get_array_as_str(array: list[int]) -> str:
-    return f"[{array[0]} .. {array[len(array) - 1]}]"
 
 
 def compare_arrays(array: list[int], method: Callable[[], None]) -> None:
@@ -91,7 +71,7 @@ def assertion_tests(method: Callable[[], None]) -> None:
     print(f"{arr_is_arr(array_method_sorted=array_five, array_hand_sorted=array_five_sorted)}")
 
 
-def run_tests(method) -> None:
+def run_tests(method: Callable[[list[int]], None]) -> None:
     setrecursionlimit(5000) # We set Recurssion depth high for the one million list element sorting test.
     print(f"{Style.BRIGHT}{Fore.YELLOW}<====={Fore.CYAN}{get_method_name(method)}{Fore.YELLOW}=====>{Fore.RESET}{Style.RESET_ALL}")
     

@@ -1,4 +1,4 @@
-from sorting_tests import run_tests
+from tests.sorting_tests import run_tests
 
 
 def make_heap(array: list[int], length: int, idx: int) -> None:
