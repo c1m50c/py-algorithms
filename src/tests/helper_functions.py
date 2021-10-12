@@ -6,7 +6,7 @@ def get_method_name(method: Callable[[], any]) -> str:
         # Get Method Name
         Returns the method's name as PascalCase, example below.
         ```py
-        get_method_name(quick_sort()) # Returns "QuickSort"
+        get_method_name(quick_sort()) # Returns "QuickSort".
         ```
         ### Parameters:
         ```py

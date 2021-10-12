@@ -1,7 +1,7 @@
 from colorama import Fore, Style
 from collections.abc import Callable
-from .helper_functions import get_array_as_str, get_method_name
 from sys import setrecursionlimit
+from .helper_functions import *
 from random import randint
 from time import time
 
