@@ -2,6 +2,16 @@ from tests.sorting_tests import run_tests
 
 
 def make_heap(array: list[int], length: int, idx: int) -> None:
+    """
+        # Make Heap
+        Makes a heap within the specified array.
+        ### Parameters
+        ```py
+        array: list[int] # The Array you want to make a heap in.
+        length: int # Size of the heap.
+        idx: int # Root index.
+        ```
+    """
     largest: int = idx
     left: int = 2 * idx + 1
     right: int = 2 * idx + 2
@@ -20,6 +30,10 @@ def make_heap(array: list[int], length: int, idx: int) -> None:
 def heap_sort(array: list[int]) -> None:
     """
         # Heap Sort
+        ### Parameters:
+        ```py
+        array: list[int] # The Array you would like to sort.
+        ```
         ### Complexities:
         ```py
         Worst Case Time Complexity == O(n log n)

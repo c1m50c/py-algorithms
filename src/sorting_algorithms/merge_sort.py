@@ -4,6 +4,10 @@ from tests.sorting_tests import run_tests
 def merge_sort(array: list[int]) -> None:
     """
         # Merge Sort
+        ### Parameters:
+        ```py
+        array: list[int] # The Array you would like to sort.
+        ```
         ### Complexities:
         ```py
         Worst Case Time Complexity == O(n log n)
