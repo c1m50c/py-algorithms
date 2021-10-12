@@ -1,12 +1,13 @@
 # Todo: Clean this up #
 
 from colorama import Fore, Style, Back
+from collections.abc import Callable
 from sys import setrecursionlimit
 from random import randint
 from time import time
 
 
-def sort_array(array: list[int], method) -> None:
+def sort_array(array: list[int], method: Callable[[list[int]], None]) -> None:
     # Todo: This is a messy fix to the issue, fix later
     if method.__name__ == "quick_sort":
         method(array, 0, len(array) - 1)
@@ -14,7 +15,18 @@ def sort_array(array: list[int], method) -> None:
         method(array)
 
 
-def get_method_name(method) -> str:
+def get_method_name(method: Callable[[], any]) -> str:
+    """
+        # Get Method Name
+        Returns the method's name as PascalCase, example below.
+        ```py
+        get_method_name(quick_sort()) # Returns "QuickSort"
+        ```
+        ### Parameters:
+        ```py
+        method: Callable[[], any] # Method you would like to get the name of.
+        ```
+    """
     string: str = method.__name__
     string_arr: list[str] = string.split("_")
     string = ""
@@ -24,6 +36,10 @@ def get_method_name(method) -> str:
 
 
 def create_array(array: list[int], length: int = 1000) -> None:
+    """
+        # Create Array
+        Creates an array (list) to be used for testing sorting algorithms.
+    """
     array.clear()
     for i in range(0, length):
         array.append(randint(-100, 100))
@@ -33,7 +49,7 @@ def get_array_as_str(array: list[int]) -> str:
     return f"[{array[0]} .. {array[len(array) - 1]}]"
 
 
-def compare_arrays(array: list[int], method) -> None:
+def compare_arrays(array: list[int], method: Callable[[], None]) -> None:
     print(f"{Fore.RED}Unsorted List: {get_array_as_str(array=array)}{Fore.RESET}")
     begin_time: float = time()
     sort_array(array=array, method=method)
@@ -49,17 +65,17 @@ def arr_is_arr(array_method_sorted: list[int], array_hand_sorted: list[int]) -> 
     return f"{color}{get_array_as_str(array_method_sorted)} == {get_array_as_str(array_hand_sorted)} -> {is_same}{Fore.RESET}"
 
 
-def assertion_tests(method) -> None:
+def assertion_tests(method: Callable[[], None]) -> None:
     print(f"Assertion Tests:")
     array_one: list[int] = [-1, 2, 1, 3, -15, 0, 5, 12, 4, 6]
     array_two: list[int] = [0, 3, 4, 5, 6, 2, 33, 2, -66]
     array_three: list[int] = [-34, 4, 2, 0, 1, 15, 13]
-    array_four: list[int] = [-9, -9, -8, -1, -3, -5, -0]
+    array_four: list[int] = [-9, -9, -8, -1, -3, -5, -1]
     array_five: list[int] = [0, 5, 2, 3, 2, 9, 8, 4, 9, 7]
     array_one_sorted: list[int] = [-15, -1, 0, 1, 2, 3, 4, 5, 6, 12]
     array_two_sorted: list[int] = [-66, 0, 2, 2, 3, 4, 5, 6, 33]
     array_three_sorted: list[int] = [-34, 0, 1, 2, 4, 13, 15]
-    array_four_sorted: list[int] = [-9, -9, -8, -5, -3, -1, -0]
+    array_four_sorted: list[int] = [-9, -9, -8, -5, -3, -1, -1]
     array_five_sorted: list[int] = [0, 2, 2, 3, 4, 5, 7, 8, 9, 9]
     
     sort_array(array=array_one, method=method)
@@ -76,7 +92,7 @@ def assertion_tests(method) -> None:
 
 
 def run_tests(method) -> None:
-    setrecursionlimit(5000)
+    setrecursionlimit(5000) # We set Recurssion depth high for the one million list element sorting test.
     print(f"{Style.BRIGHT}{Fore.YELLOW}<====={Fore.CYAN}{get_method_name(method)}{Fore.YELLOW}=====>{Fore.RESET}{Style.RESET_ALL}")
     
     arr: list[int] = [  ]
