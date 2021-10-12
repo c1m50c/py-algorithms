@@ -20,6 +20,7 @@ def binary_search(array: list[int], finding: int, left: int, right: int) -> int:
         Space Complexity == O(1)
         ```
     """
+    
     if right >= left:
         middle: int = left + (right - 1) // 2
         if array[middle] == finding:
