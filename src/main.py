@@ -21,19 +21,19 @@ def help():
     """
     # Todo: Automatically generate this stuff based on the COMMANDS dictionary
     print("Help:")
-    print(f"1. help {Fore.BLUE}// Gives valid commands{Fore.RESET}")
-    print(f"2. quit {Fore.BLUE}// Quits{Fore.RESET}")
-    print(f"3. all {Fore.BLUE}// Runs all algorithms{Fore.RESET}")
-    print(f"4. sorting {Fore.BLUE}// Runs all sorting algorithms{Fore.RESET}")
-    print(f"5. searching {Fore.BLUE}// Runs all searching algorithms{Fore.RESET}")
-    print(f"6. quick_sort {Fore.BLUE}// Runs QuickSort algorithm{Fore.RESET}")
-    print(f"7. merge_sort {Fore.BLUE}// Runs MergeSort algorithm{Fore.RESET}")
-    print(f"8. insertion_sort {Fore.BLUE}// Runs InsertionSort algorithm{Fore.RESET}")
-    print(f"9. selction_sort {Fore.BLUE}// Runs SelectionSort algorithm{Fore.RESET}")
-    print(f"10. bubble_sort {Fore.BLUE}// Runs BubbleSort algorithm{Fore.RESET}")
-    print(f"11. heap_sort {Fore.BLUE}// Runs HeapSort algorithm{Fore.RESET}")
-    print(f"12. linear_search {Fore.BLUE}// Runs LinearSearch algorithm{Fore.RESET}")
-    print(f"13. binary_search {Fore.BLUE}// Runs BinarySearch algorithm{Fore.RESET}")
+    print(f"help {Fore.BLUE}// Gives valid commands{Fore.RESET}")
+    print(f"quit {Fore.BLUE}// Quits{Fore.RESET}")
+    print(f"all {Fore.BLUE}// Runs all algorithms{Fore.RESET}")
+    print(f"sorting {Fore.BLUE}// Runs all sorting algorithms{Fore.RESET}")
+    print(f"searching {Fore.BLUE}// Runs all searching algorithms{Fore.RESET}")
+    print(f"quick_sort {Fore.BLUE}// Runs QuickSort algorithm{Fore.RESET}")
+    print(f"merge_sort {Fore.BLUE}// Runs MergeSort algorithm{Fore.RESET}")
+    print(f"insertion_sort {Fore.BLUE}// Runs InsertionSort algorithm{Fore.RESET}")
+    print(f"selction_sort {Fore.BLUE}// Runs SelectionSort algorithm{Fore.RESET}")
+    print(f"bubble_sort {Fore.BLUE}// Runs BubbleSort algorithm{Fore.RESET}")
+    print(f"heap_sort {Fore.BLUE}// Runs HeapSort algorithm{Fore.RESET}")
+    print(f"linear_search {Fore.BLUE}// Runs LinearSearch algorithm{Fore.RESET}")
+    print(f"binary_search {Fore.BLUE}// Runs BinarySearch algorithm{Fore.RESET}")
 
 
 def run_all_algorithms():

@@ -15,6 +15,7 @@ def get_color(found: int) -> Fore:
         found: int # Return value from a searching algorithm.
         ```
     """
+    
     if found <= -1:
         return Fore.RED
     return Fore.GREEN
@@ -32,6 +33,7 @@ def speed_test(method: Callable[[list[any], any], int], sorting_method: Callable
         length: int = 100 # Determines the length of the array when created.
         ```
     """
+    
     print(f"{Style.DIM}Search Speed Test{Style.RESET_ALL}")
     
     array: list[any] = [  ]
@@ -68,6 +70,7 @@ def assert_compare(method: Callable[[list[any], any], int], array: list[any], fi
         idx: int # Index of what we wanted to find.
         ```
     """
+    
     found: int = method(array, finding)
     if found == idx and idx == -1: # Has been found but does not exist
         print(f"{Fore.GREEN}Element {Style.BRIGHT}'{finding}'{Style.NORMAL} does not exist in {Style.BRIGHT}'{get_array_as_str(array=array)}'{Style.NORMAL} at {Style.BRIGHT}'{idx}'{Style.RESET_ALL}.")
@@ -111,6 +114,7 @@ def run_tests(method: Callable[[list[any], any], int]) -> None:
         method: Callable[[list[any], any], int] # Searching Algorithm Method.
         ```
     """
+    
     setrecursionlimit(5000) # Handy to have this higher then default limit, be cautious of crashes when too high though
     print(f"{Style.BRIGHT}{Fore.YELLOW}<====={Fore.CYAN}{get_method_name(method)}{Fore.YELLOW}=====>{Fore.RESET}{Style.RESET_ALL}")
     
