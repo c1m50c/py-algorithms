@@ -20,7 +20,7 @@ def get_color(found: int) -> Fore:
     return Fore.GREEN
 
 
-def speed_test(array: list[any], method: Callable[[list[any], any], int], sorting_method: Callable[[list[int]], None] = merge_sort, length: int = 100) -> None:
+def speed_test(method: Callable[[list[any], any], int], sorting_method: Callable[[list[int]], None] = merge_sort, length: int = 100) -> None:
     """
         # Speed Test
         Tests a searching algorithm's speed by searching through an array of size `length`.
@@ -34,6 +34,7 @@ def speed_test(array: list[any], method: Callable[[list[any], any], int], sortin
     """
     print(f"{Style.DIM}Search Speed Test{Style.RESET_ALL}")
     
+    array: list[any] = [  ]
     RAND_MIN: int = -20000
     RAND_MAX: int = 20000
     
@@ -55,6 +56,31 @@ def speed_test(array: list[any], method: Callable[[list[any], any], int], sortin
     print(f"Time Elapsed: {end_time - begin_time}s")
 
 
+def assert_compare(method: Callable[[list[any], any], int], array: list[any], finding: any, idx: int) -> None:
+    found: int = method(array, finding)
+    if found == idx: # Has been Found
+        print(f"{Fore.GREEN}Found {Style.BRIGHT}'{finding}'{Style.NORMAL} in {Style.BRIGHT}'{get_array_as_str(array=array)}'{Style.NORMAL} at index {Style.BRIGHT}'{found}'{Style.NORMAL} == True{Fore.RESET}")
+    else:
+        print(f"{Fore.RED}Found {Style.BRIGHT}'{finding}'{Style.NORMAL} in {Style.BRIGHT}'{get_array_as_str(array=array)}'{Style.NORMAL} at index {Style.BRIGHT}'{found}'{Style.NORMAL} == False{Fore.RESET}")
+
+
+def assertion_test(method: Callable[[list[any], any], int]) -> None:
+    # Already sorted for algorithms like Binary Search #
+    array_a, finding_a, idx_a = [ 0, 13, 23, 215, 532, 932], 932, 5
+    array_b, finding_b, idx_b = [ 14, 29, 45, 46, 68, 92, 132 ], 29, 1
+    array_c, finding_c, idx_c = [ 123, 456, 557, 559, 612, 722 ], 666, -1
+    array_d, finding_d, idx_d = [ 100, 110, 120, 130, 140, 150 ], 130, 3
+    array_e, finding_e, idx_e = [ 1, 2, 3, 3, 5, 9, 10, 11, 24, 29 ], 29, 9
+    
+    print(f"{Style.DIM}Assertion Test:{Style.RESET_ALL}")
+    
+    assert_compare(method=method, array=array_a, finding=finding_a, idx=idx_a)
+    assert_compare(method=method, array=array_b, finding=finding_b, idx=idx_b)
+    assert_compare(method=method, array=array_c, finding=finding_c, idx=idx_c)
+    assert_compare(method=method, array=array_d, finding=finding_d, idx=idx_d)
+    assert_compare(method=method, array=array_e, finding=finding_e, idx=idx_e)
+
+
 def run_tests(method: Callable[[list[any], any], int]) -> None:
     """
         # Run Tests
@@ -67,19 +93,20 @@ def run_tests(method: Callable[[list[any], any], int]) -> None:
     setrecursionlimit(5000) # Handy to have this higher then default limit, be cautious of crashes when too high though
     print(f"{Style.BRIGHT}{Fore.YELLOW}<====={Fore.CYAN}{get_method_name(method)}{Fore.YELLOW}=====>{Fore.RESET}{Style.RESET_ALL}")
     
-    arr: list[int] = [  ]
-    
     # Speed Tests
-    speed_test(array=arr, method=method, length=1000)
+    speed_test(method=method, length=1000)
     print()
-    speed_test(array=arr, method=method, length=10000)
+    speed_test(method=method, length=10000)
     print()
-    speed_test(array=arr, method=method, length=100000)
+    speed_test(method=method, length=100000)
     print()
-    speed_test(array=arr, method=method, length=500000)
+    speed_test(method=method, length=500000)
     print()
-    speed_test(array=arr, method=method, length=750000)
+    speed_test(method=method, length=750000)
     print()
-    speed_test(array=arr, method=method, length=1000000)
+    speed_test(method=method, length=1000000)
+    print()
+    
+    assertion_test(method=method)
     
     print(f"{Style.BRIGHT}{Fore.YELLOW}<==========>{Fore.RESET}{Style.RESET_ALL}")
