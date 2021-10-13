@@ -4,7 +4,6 @@ from sorting_algorithms.bubble_sort import bubble_sort
 from sorting_algorithms.quick_sort import quick_sort
 from sorting_algorithms.merge_sort import merge_sort
 from sorting_algorithms.heap_sort import heap_sort
-from sorting_algorithms.threaded_quick_sort import threaded_quick_sort
 
 from search_algorithms.linear_search import linear_search
 from search_algorithms.binary_search import binary_search
@@ -33,7 +32,6 @@ def help():
     print(f"selction_sort {Fore.BLUE}// Runs SelectionSort algorithm{Fore.RESET}")
     print(f"bubble_sort {Fore.BLUE}// Runs BubbleSort algorithm{Fore.RESET}")
     print(f"heap_sort {Fore.BLUE}// Runs HeapSort algorithm{Fore.RESET}")
-    print(f"threaded_quick_sort {Fore.BLUE}// Runs ThreadedQuickSort algorithm{Fore.RESET}")
     print(f"linear_search {Fore.BLUE}// Runs LinearSearch algorithm{Fore.RESET}")
     print(f"binary_search {Fore.BLUE}// Runs BinarySearch algorithm{Fore.RESET}")
 
@@ -55,8 +53,6 @@ def run_all_algorithms():
     run_sorting_tests(bubble_sort)
     print()
     run_sorting_tests(heap_sort)
-    print()
-    run_sorting_tests(threaded_quick_sort)
     print()
     run_search_tests(linear_search)
     print()
@@ -80,8 +76,6 @@ def run_all_sorting_algorithms():
     run_sorting_tests(bubble_sort)
     print()
     run_sorting_tests(heap_sort)
-    print()
-    run_sorting_tests(threaded_quick_sort)
 
 
 def run_all_searching_algorithms():
@@ -102,7 +96,6 @@ def run_insertion_sort(): run_sorting_tests(insertion_sort)
 def run_selection_sort(): run_sorting_tests(selection_sort)
 def run_bubble_sort(): run_sorting_tests(bubble_sort)
 def run_heap_sort(): run_sorting_tests(heap_sort)
-def run_threaded_quick_sort(): run_sorting_tests(threaded_quick_sort)
 def run_linear_search(): run_search_tests(linear_search)
 def run_binary_search(): run_search_tests(binary_search)
 
@@ -119,7 +112,6 @@ COMMANDS = {
     "selection_sort": [run_selection_sort],
     "bubble_sort": [run_bubble_sort],
     "heap_sort": [run_heap_sort],
-    "threaded_quick_sort": [run_threaded_quick_sort],
     "linear_search": [run_linear_search],
     "binary_search": [run_binary_search],
 }
