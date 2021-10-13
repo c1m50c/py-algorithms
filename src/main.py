@@ -5,7 +5,10 @@ from sorting_algorithms.quick_sort import quick_sort
 from sorting_algorithms.merge_sort import merge_sort
 from sorting_algorithms.heap_sort import heap_sort
 
-from tests.sorting_tests import run_tests
+from search_algorithms.linear_search import linear_search
+
+from tests.searching_tests import run_tests as run_search_tests
+from tests.sorting_tests import run_tests as run_sorting_tests
 from colorama import Fore, Style
 
 
@@ -26,6 +29,7 @@ def help():
     print(f"7. selction_sort {Fore.BLUE}// Runs SelectionSort algorithm{Fore.RESET}")
     print(f"8. bubble_sort {Fore.BLUE}// Runs BubbleSort algorithm{Fore.RESET}")
     print(f"9. heap_sort {Fore.BLUE}// Runs HeapSort algorithm{Fore.RESET}")
+    print(f"10. linear_search {Fore.BLUE}// Runs LinearSearch algorithm{Fore.RESET}")
 
 
 def run_all_algorithms():
@@ -34,26 +38,29 @@ def run_all_algorithms():
         Runs all the algorithms.
     """
     print("Running all Algorithms...")
-    run_tests(quick_sort)
+    run_sorting_tests(quick_sort)
     print()
-    run_tests(merge_sort)
+    run_sorting_tests(merge_sort)
     print()
-    run_tests(insertion_sort)
+    run_sorting_tests(insertion_sort)
     print()
-    run_tests(selection_sort)
+    run_sorting_tests(selection_sort)
     print()
-    run_tests(bubble_sort)
+    run_sorting_tests(bubble_sort)
     print()
-    run_tests(heap_sort)
+    run_sorting_tests(heap_sort)
+    print()
+    run_search_tests(linear_search)
 
 
 # This is redundant, find a better way to run singular tests.
-def run_quick_sort(): run_tests(quick_sort)
-def run_merge_sort(): run_tests(merge_sort)
-def run_insertion_sort(): run_tests(insertion_sort)
-def run_selection_sort(): run_tests(selection_sort)
-def run_bubble_sort(): run_tests(bubble_sort)
-def run_heap_sort(): run_tests(heap_sort)
+def run_quick_sort(): run_sorting_tests(quick_sort)
+def run_merge_sort(): run_sorting_tests(merge_sort)
+def run_insertion_sort(): run_sorting_tests(insertion_sort)
+def run_selection_sort(): run_sorting_tests(selection_sort)
+def run_bubble_sort(): run_sorting_tests(bubble_sort)
+def run_heap_sort(): run_sorting_tests(heap_sort)
+def run_linear_search(): run_search_tests(linear_search)
 
 
 COMMANDS = {
@@ -66,6 +73,7 @@ COMMANDS = {
     "selection_sort": [run_selection_sort],
     "bubble_sort": [run_bubble_sort],
     "heap_sort": [run_heap_sort],
+    "linear_search": [run_linear_search]
 }
 
 

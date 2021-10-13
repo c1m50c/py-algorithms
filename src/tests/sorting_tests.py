@@ -2,7 +2,6 @@ from colorama import Fore, Style
 from collections.abc import Callable
 from sys import setrecursionlimit
 from .helper_functions import *
-from random import randint
 from time import time
 
 
@@ -21,21 +20,6 @@ def sort_array(array: list[int], method: Callable[[list[int]], None]) -> None:
         method(array, 0, len(array) - 1)
     else:
         method(array)
-
-
-def create_array(array: list[int], length: int = 1000) -> None:
-    """
-        # Create Array
-        Creates an array (list) to be used for testing sorting algorithms.
-        ### Parameters:
-        ```py
-        array: list[int] # Array to fill.
-        length: int = 1000 # Desired array length.
-        ```
-    """
-    array.clear()
-    for i in range(0, length):
-        array.append(randint(-100, 100))
 
 
 def test_sorting_speed(array: list[int], method: Callable[[list[int]], None]) -> None:
@@ -139,19 +123,19 @@ def run_tests(method: Callable[[list[int]], None]) -> None:
     arr: list[int] = [  ]
     
     # List Length of 100 Test #
-    create_array(array=arr, length=100)
+    create_integer_array(array=arr, length=100)
     print(f"List of Length {len(arr)} Test:")
     test_sorting_speed(array=arr, method=method)
     print()
     
     # List Length of 1000 Test #
-    create_array(array=arr, length=1000)
+    create_integer_array(array=arr, length=1000)
     print(f"List of Length {len(arr)} Test:")
     test_sorting_speed(array=arr, method=method)
     print()
     
     # List Length of 10000 Test #
-    create_array(array=arr, length=10000)
+    create_integer_array(array=arr, length=10000)
     print(f"List of Length {len(arr)} Test:")
     test_sorting_speed(array=arr, method=method)
     print()
@@ -159,7 +143,7 @@ def run_tests(method: Callable[[list[int]], None]) -> None:
     # List Length of 100000 Test #
     # Skip slow algorithms, this test will butcher them.
     if method.__name__ not in ["insertion_sort", "selection_sort", "bubble_sort"]:
-        create_array(array=arr, length=100000)
+        create_integer_array(array=arr, length=100000)
         print(f"List of Length {len(arr)} Test:")
         test_sorting_speed(array=arr, method=method)
         print()
@@ -171,7 +155,7 @@ def run_tests(method: Callable[[list[int]], None]) -> None:
     # Skip slow algorithms, this test will butcher them.
     if method.__name__ not in ["insertion_sort", "selection_sort", "bubble_sort", "quick_sort"]:
         # We skip 'quick_sort' cause in my testing it crashes python on one million, maybe to recurssive?
-        create_array(array=arr, length=1000000)
+        create_integer_array(array=arr, length=1000000)
         print(f"List of Length {len(arr)} Test:")
         test_sorting_speed(array=arr, method=method)
         print()

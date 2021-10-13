@@ -1,14 +1,14 @@
 from tests.searching_tests import run_tests
 
 
-def linear_search(array: list[int], finding: int) -> int:
+def linear_search(array: list[any], finding: any) -> int:
     """
         # Linear Search
         Searches the array for `finding`, returning its index if found.
         ### Parameters:
         ```py
-        array: list[int] # The Array to search.
-        finding: int # What we're trying to find within the Array.
+        array: list[any] # The Array to search.
+        finding: any # What we're trying to find within the Array.
         ```
         ### Complexities:
         ```py
