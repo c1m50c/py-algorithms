@@ -1,7 +1,7 @@
 from tests.searching_tests import run_tests
 
 
-def binary_search(array: list[int], finding: int, left: int, right: int) -> int:
+def binary_search(array: list[int], finding: int) -> int:
     """
         # Binary Search
         Searches a sorted array for `finding`, returning its index within the array if found.
@@ -21,16 +21,16 @@ def binary_search(array: list[int], finding: int, left: int, right: int) -> int:
         ```
     """
     
-    if right >= left:
-        middle: int = left + (right - 1) // 2
-        if array[middle] == finding:
+    left, right = 0, len(array) - 1
+    while left <= right:
+        middle = (left + right) // 2
+        if finding == array[middle]:
             return middle
-        elif array[middle] > finding:
-            return binary_search(array=array, finding=finding, left=left, right=middle-1)
+        elif finding < array[middle]:
+            right = middle - 1
         else:
-            return binary_search(array=array, finding=finding, left=middle+1, right=right)
-    else:
-        return -1
+            left = middle + 1
+    return -1
 
 
 if __name__ == "__main__":

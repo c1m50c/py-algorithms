@@ -20,10 +20,7 @@ def speed_test(array: list[any], method: Callable[[list[any], any], int], sortin
     print(f"Array Length: '{len(array)}'.")
     begin_time: float = time()
     finding: int = randint(a=RAND_MIN, b=RAND_MAX)
-    if method.__name__ in ["binary_search"]:
-        found = method(array, finding, 0, len(array) - 1)
-    else:
-        found = method(array, finding)
+    found = method(array, finding)
     end_time: float = time()
     print(f"Searched for '{finding}', found at index '{found}'.")
     print(f"Time Elapsed: {end_time - begin_time}s")
