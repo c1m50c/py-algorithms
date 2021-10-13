@@ -7,6 +7,7 @@ from sorting_algorithms.heap_sort import heap_sort
 
 from search_algorithms.linear_search import linear_search
 from search_algorithms.binary_search import binary_search
+from search_algorithms.threaded_linear_search import threaded_linear_search
 
 from tests.searching_tests import run_tests as run_search_tests
 from tests.sorting_tests import run_tests as run_sorting_tests
@@ -34,6 +35,7 @@ def help():
     print(f"heap_sort {Fore.BLUE}// Runs HeapSort algorithm{Fore.RESET}")
     print(f"linear_search {Fore.BLUE}// Runs LinearSearch algorithm{Fore.RESET}")
     print(f"binary_search {Fore.BLUE}// Runs BinarySearch algorithm{Fore.RESET}")
+    print(f"threaded_linear_search {Fore.BLUE}// Runs ThreadedLinearSearch algorithm{Fore.RESET}")
 
 
 def run_all_algorithms():
@@ -87,6 +89,8 @@ def run_all_searching_algorithms():
     run_search_tests(linear_search)
     print()
     run_search_tests(binary_search)
+    print()
+    run_search_tests(threaded_linear_search)
 
 
 # This is redundant, find a better way to run singular tests.
@@ -98,6 +102,7 @@ def run_bubble_sort(): run_sorting_tests(bubble_sort)
 def run_heap_sort(): run_sorting_tests(heap_sort)
 def run_linear_search(): run_search_tests(linear_search)
 def run_binary_search(): run_search_tests(binary_search)
+def run_threaded_linear_search(): run_search_tests(threaded_linear_search)
 
 
 COMMANDS = {
@@ -114,6 +119,7 @@ COMMANDS = {
     "heap_sort": [run_heap_sort],
     "linear_search": [run_linear_search],
     "binary_search": [run_binary_search],
+    "threaded_linear_search": [run_threaded_linear_search],
 }
 
 
