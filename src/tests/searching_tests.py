@@ -33,11 +33,16 @@ def speed_test(method: Callable[[list[any], any], int], sorting_method: Callable
         ```
     """
     
+    if length >= 5000000 and method.__name__ in ["binary_search"]:
+        # Skip for tests that need a sorting algorithm
+        print(f"{Style.DIM}Skipping Test cause specified searching or sorting algorithm is too slow.{Style.RESET_ALL}")
+        return
+    
     print(f"{Style.DIM}Search Speed Test{Style.RESET_ALL}")
     
     array: list[any] = [  ]
-    RAND_MIN: int = -20000
-    RAND_MAX: int = 20000
+    RAND_MIN: int = -2500000
+    RAND_MAX: int = 2500000
     
     create_integer_array(array=array, length=length, rand_min=RAND_MIN, rand_max=RAND_MAX)
     if method.__name__ in ["binary_search"]:
@@ -128,6 +133,10 @@ def run_tests(method: Callable[[list[any], any], int]) -> None:
     speed_test(method=method, length=750000)
     print()
     speed_test(method=method, length=1000000)
+    print()
+    speed_test(method=method, length=5000000)
+    print()
+    speed_test(method=method, length=10000000)
     print()
     
     assertion_test(method=method)

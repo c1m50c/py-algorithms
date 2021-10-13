@@ -38,7 +38,7 @@ def threaded_linear_search(array: list[any], finding: any) -> int:
         ```
     """
     
-    # Todo: Make parameter for thread amount
+    # Todo: Make parameter for thread amount, to allow selection of how many threads to use.
     middle: int = len(array) // 2
     result: list[list[int, int]] = [  ] # Array Length, Index
     thread_one: Thread = Thread(target=linear_search, args=[array[:middle], finding, result])
@@ -54,6 +54,7 @@ def threaded_linear_search(array: list[any], finding: any) -> int:
         if arr[1] != -1:
             ret: int = 0
             for i in range(0, idx):
+                # Add indexes of previous results to get true index in merged array.
                 ret += result[i][0]
             return ret + arr[1]
     return -1
