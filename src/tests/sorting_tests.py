@@ -15,6 +15,7 @@ def sort_array(array: list[int], method: Callable[[list[int]], None]) -> None:
         method: Callable[[list[int]], None] # The Method you want to use to sort the Array.
         ```
     """
+    
     # Todo: This is a messy fix to the issue, fix later
     if method.__name__ == "quick_sort":
         method(array, 0, len(array) - 1)
@@ -41,6 +42,7 @@ def test_sorting_speed(array: list[int], method: Callable[[list[int]], None]) ->
         method: Callable[[list[int]], None] # The method you would like to use to sort the Array.
         ```
     """
+    
     print(f"{Fore.RED}Unsorted List: {get_array_as_str(array=array)}{Fore.RESET}")
     begin_time: float = time()
     sort_array(array=array, method=method)
@@ -68,6 +70,7 @@ def arr_is_arr(array_method_sorted: list[int], array_hand_sorted: list[int]) -> 
         array_hand_sorted: list[int] # An Array that has been sorted by hand to ensure that it is correctly sorted.
         ```
     """
+    
     color, is_same = Fore.RED, False
     if array_method_sorted == array_hand_sorted:
         color, is_same = Fore.GREEN, True
@@ -83,6 +86,7 @@ def assertion_tests(method: Callable[[list[int]], None]) -> None:
         method: Callable[[list[int]], None] # The sorting method.
         ```
     """
+    
     print(f"Assertion Tests:")
     array_one: list[int] = [-1, 2, 1, 3, -15, 0, 5, 12, 4, 6]
     array_two: list[int] = [0, 3, 4, 5, 6, 2, 33, 2, -66]
@@ -117,6 +121,7 @@ def run_tests(method: Callable[[list[int]], None]) -> None:
         method: Callable[[list[int]], None] # The sorting method.
         ```
     """
+    
     setrecursionlimit(5000) # We set Recurssion depth high for the one million list element sorting test.
     print(f"{Style.BRIGHT}{Fore.YELLOW}<====={Fore.CYAN}{get_method_name(method)}{Fore.YELLOW}=====>{Fore.RESET}{Style.RESET_ALL}")
     
