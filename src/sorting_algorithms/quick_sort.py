@@ -1,4 +1,5 @@
 from tests.sorting_tests import run_tests
+from sys import setrecursionlimit
 
 
 def partition(array: list[int], left: int, right: int) -> int:
@@ -40,6 +41,7 @@ def quick_sort(array: list[int], left: int, right: int) -> None:
         ```
     """
     
+    setrecursionlimit(5000)
     if left >= right:
         return
     

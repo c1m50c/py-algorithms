@@ -1,6 +1,5 @@
 from sorting_algorithms.merge_sort import merge_sort
 from collections.abc import Callable
-from sys import setrecursionlimit
 from colorama import Fore, Style
 from .helper_functions import *
 from time import time
@@ -115,7 +114,6 @@ def run_tests(method: Callable[[list[any], any], int]) -> None:
         ```
     """
     
-    setrecursionlimit(5000) # Handy to have this higher then default limit, be cautious of crashes when too high though
     print(f"{Style.BRIGHT}{Fore.YELLOW}<====={Fore.CYAN}{get_method_name(method)}{Fore.YELLOW}=====>{Fore.RESET}{Style.RESET_ALL}")
     
     # Speed Tests

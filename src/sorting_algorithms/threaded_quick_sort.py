@@ -1,18 +1,16 @@
+from sorting_algorithms.quick_sort import quick_sort
 from tests.sorting_tests import run_tests
-from sorting_algorithms import quick_sort
 from threading import Thread
 from colorama import Style
 
 
-def threaded_quick_sort(array: list[int], threads: int = 2) -> None:
+def threaded_quick_sort(array: list[int]) -> None:
     """
         # Threaded Quick Sort
         The quick sort algorithm with multi-threading.
         ### Parameters:
         ```py
         array: list[int] # The Array you would like to sort.
-        left: int # Left position, usually set to the first index of the Array.
-        right: int # Right position, usually set to the last index of the Array.
         ```
         ### Complexities:
         ```py
@@ -22,6 +20,7 @@ def threaded_quick_sort(array: list[int], threads: int = 2) -> None:
         Space Complexity == O(n)
         ```
     """
+
 
 if __name__ == "__main__":
     run_tests(threaded_quick_sort)
