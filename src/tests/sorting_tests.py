@@ -124,19 +124,19 @@ def run_tests(method: Callable[[list[int]], None]) -> None:
     
     # List Length of 100 Test #
     create_integer_array(array=arr, length=100)
-    print(f"List of Length {len(arr)} Test:")
+    print(f"{Style.DIM}List of Length {len(arr)} Test:{Style.RESET_ALL}")
     test_sorting_speed(array=arr, method=method)
     print()
     
     # List Length of 1000 Test #
     create_integer_array(array=arr, length=1000)
-    print(f"List of Length {len(arr)} Test:")
+    print(f"{Style.DIM}List of Length {len(arr)} Test:{Style.RESET_ALL}")
     test_sorting_speed(array=arr, method=method)
     print()
     
     # List Length of 10000 Test #
     create_integer_array(array=arr, length=10000)
-    print(f"List of Length {len(arr)} Test:")
+    print(f"{Style.DIM}List of Length {len(arr)} Test:{Style.RESET_ALL}")
     test_sorting_speed(array=arr, method=method)
     print()
     
@@ -144,11 +144,11 @@ def run_tests(method: Callable[[list[int]], None]) -> None:
     # Skip slow algorithms, this test will butcher them.
     if method.__name__ not in ["insertion_sort", "selection_sort", "bubble_sort"]:
         create_integer_array(array=arr, length=100000)
-        print(f"List of Length {len(arr)} Test:")
+        print(f"{Style.DIM}List of Length {len(arr)} Test:{Style.RESET_ALL}")
         test_sorting_speed(array=arr, method=method)
         print()
     else:
-        print("Skipping Test cause specified algorithm is too slow.")
+        print(f"{Style.DIM}Skipping Test cause specified algorithm is too slow.{Style.RESET_ALL}")
         print()
     
     # List Length of 1000000 Test #
@@ -156,11 +156,11 @@ def run_tests(method: Callable[[list[int]], None]) -> None:
     if method.__name__ not in ["insertion_sort", "selection_sort", "bubble_sort", "quick_sort"]:
         # We skip 'quick_sort' cause in my testing it crashes python on one million, maybe to recurssive?
         create_integer_array(array=arr, length=1000000)
-        print(f"List of Length {len(arr)} Test:")
+        print(f"{Style.DIM}List of Length {len(arr)} Test:{Style.RESET_ALL}")
         test_sorting_speed(array=arr, method=method)
         print()
     else:
-        print("Skipping Test cause specified algorithm is too slow.")
+        print(f"{Style.DIM}Skipping Test cause specified algorithm is too slow.{Style.RESET_ALL}")
         print()
     
     # Assertion Tests #
