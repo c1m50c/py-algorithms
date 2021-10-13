@@ -69,11 +69,12 @@ def assert_compare(method: Callable[[list[any], any], int], array: list[any], fi
         ```
     """
     found: int = method(array, finding)
-    if found == idx: # Has been Found
-        print(f"{Fore.GREEN}Found {Style.BRIGHT}'{finding}'{Style.NORMAL} in {Style.BRIGHT}'{get_array_as_str(array=array)}'{Style.NORMAL} at index {Style.BRIGHT}'{found}'{Style.NORMAL} == True{Fore.RESET}")
-    else:
-        print(f"{Fore.RED}Found {Style.BRIGHT}'{finding}'{Style.NORMAL} in {Style.BRIGHT}'{get_array_as_str(array=array)}'{Style.NORMAL} at index {Style.BRIGHT}'{found}'{Style.NORMAL} == False{Fore.RESET}")
-
+    if found == idx and idx == -1: # Has been found but does not exist
+        print(f"{Fore.GREEN}Element {Style.BRIGHT}'{finding}'{Style.NORMAL} does not exist in {Style.BRIGHT}'{get_array_as_str(array=array)}'{Style.NORMAL} at {Style.BRIGHT}'{idx}'{Style.RESET_ALL}.")
+    elif found == idx: # Has been found
+        print(f"{Fore.GREEN}Found {Style.BRIGHT}'{finding}'{Style.NORMAL} in {Style.BRIGHT}'{get_array_as_str(array=array)}'{Style.NORMAL} at index {Style.BRIGHT}'{found}'{Style.RESET_ALL}.")
+    else: # Has not been found and does exist
+        print(f"{Fore.RED}Did not find {Style.BRIGHT}'{finding}'{Style.NORMAL} in {Style.BRIGHT}'{get_array_as_str(array=array)}'{Style.NORMAL} at index {Style.BRIGHT}'{idx}'{Style.RESET_ALL}.")
 
 def assertion_test(method: Callable[[list[any], any], int]) -> None:
     """
