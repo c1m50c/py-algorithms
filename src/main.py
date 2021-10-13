@@ -6,6 +6,7 @@ from sorting_algorithms.merge_sort import merge_sort
 from sorting_algorithms.heap_sort import heap_sort
 
 from search_algorithms.linear_search import linear_search
+from search_algorithms.binary_search import binary_search
 
 from tests.searching_tests import run_tests as run_search_tests
 from tests.sorting_tests import run_tests as run_sorting_tests
@@ -23,13 +24,16 @@ def help():
     print(f"1. help {Fore.BLUE}// Gives valid commands{Fore.RESET}")
     print(f"2. quit {Fore.BLUE}// Quits{Fore.RESET}")
     print(f"3. all {Fore.BLUE}// Runs all algorithms{Fore.RESET}")
-    print(f"4. quick_sort {Fore.BLUE}// Runs QuickSort algorithm{Fore.RESET}")
-    print(f"5. merge_sort {Fore.BLUE}// Runs MergeSort algorithm{Fore.RESET}")
-    print(f"6. insertion_sort {Fore.BLUE}// Runs InsertionSort algorithm{Fore.RESET}")
-    print(f"7. selction_sort {Fore.BLUE}// Runs SelectionSort algorithm{Fore.RESET}")
-    print(f"8. bubble_sort {Fore.BLUE}// Runs BubbleSort algorithm{Fore.RESET}")
-    print(f"9. heap_sort {Fore.BLUE}// Runs HeapSort algorithm{Fore.RESET}")
-    print(f"10. linear_search {Fore.BLUE}// Runs LinearSearch algorithm{Fore.RESET}")
+    print(f"4. sorting {Fore.BLUE}// Runs all sorting algorithms{Fore.RESET}")
+    print(f"5. searching {Fore.BLUE}// Runs all searching algorithms{Fore.RESET}")
+    print(f"6. quick_sort {Fore.BLUE}// Runs QuickSort algorithm{Fore.RESET}")
+    print(f"7. merge_sort {Fore.BLUE}// Runs MergeSort algorithm{Fore.RESET}")
+    print(f"8. insertion_sort {Fore.BLUE}// Runs InsertionSort algorithm{Fore.RESET}")
+    print(f"9. selction_sort {Fore.BLUE}// Runs SelectionSort algorithm{Fore.RESET}")
+    print(f"10. bubble_sort {Fore.BLUE}// Runs BubbleSort algorithm{Fore.RESET}")
+    print(f"11. heap_sort {Fore.BLUE}// Runs HeapSort algorithm{Fore.RESET}")
+    print(f"12. linear_search {Fore.BLUE}// Runs LinearSearch algorithm{Fore.RESET}")
+    print(f"13. binary_search {Fore.BLUE}// Runs BinarySearch algorithm{Fore.RESET}")
 
 
 def run_all_algorithms():
@@ -51,6 +55,38 @@ def run_all_algorithms():
     run_sorting_tests(heap_sort)
     print()
     run_search_tests(linear_search)
+    print()
+    run_search_tests(binary_search)
+
+
+def run_all_sorting_algorithms():
+    """
+        # Run All Sorting Algorithms ~ Command
+        Runs all the sorting algorithms.
+    """
+    print("Running all Sorting Algorithms...")
+    run_sorting_tests(quick_sort)
+    print()
+    run_sorting_tests(merge_sort)
+    print()
+    run_sorting_tests(insertion_sort)
+    print()
+    run_sorting_tests(selection_sort)
+    print()
+    run_sorting_tests(bubble_sort)
+    print()
+    run_sorting_tests(heap_sort)
+
+
+def run_all_searching_algorithms():
+    """
+        # Run All Searching Algorithms ~ Command
+        Runs all the searching algorithms.
+    """
+    print("Running all Searching Algorithms...")
+    run_search_tests(linear_search)
+    print()
+    run_search_tests(binary_search)
 
 
 # This is redundant, find a better way to run singular tests.
@@ -61,19 +97,23 @@ def run_selection_sort(): run_sorting_tests(selection_sort)
 def run_bubble_sort(): run_sorting_tests(bubble_sort)
 def run_heap_sort(): run_sorting_tests(heap_sort)
 def run_linear_search(): run_search_tests(linear_search)
+def run_binary_search(): run_search_tests(binary_search)
 
 
 COMMANDS = {
     "help": [help],
     "quit": [quit],
     "all": [run_all_algorithms],
+    "sorting": [run_all_sorting_algorithms],
+    "searching": [run_all_searching_algorithms],
     "quick_sort": [run_quick_sort],
     "merge_sort": [run_merge_sort],
     "insertion_sort": [run_insertion_sort],
     "selection_sort": [run_selection_sort],
     "bubble_sort": [run_bubble_sort],
     "heap_sort": [run_heap_sort],
-    "linear_search": [run_linear_search]
+    "linear_search": [run_linear_search],
+    "binary_search": [run_binary_search],
 }
 
 
