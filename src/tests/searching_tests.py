@@ -57,6 +57,17 @@ def speed_test(method: Callable[[list[any], any], int], sorting_method: Callable
 
 
 def assert_compare(method: Callable[[list[any], any], int], array: list[any], finding: any, idx: int) -> None:
+    """
+        # Assert Compare
+        Compares searching algorithm findings to see if they correctly found an element within the given array.
+        ### Parameters:
+        ```py
+        method: Callable[[list[any], any], int] # Searching Algorithm Method.
+        array: list[any] # Array to be tested.
+        finding: any # What we wanted to find.
+        idx: int # Index of what we wanted to find.
+        ```
+    """
     found: int = method(array, finding)
     if found == idx: # Has been Found
         print(f"{Fore.GREEN}Found {Style.BRIGHT}'{finding}'{Style.NORMAL} in {Style.BRIGHT}'{get_array_as_str(array=array)}'{Style.NORMAL} at index {Style.BRIGHT}'{found}'{Style.NORMAL} == True{Fore.RESET}")
@@ -65,6 +76,15 @@ def assert_compare(method: Callable[[list[any], any], int], array: list[any], fi
 
 
 def assertion_test(method: Callable[[list[any], any], int]) -> None:
+    """
+        # Assertion Test
+        Used to ensure that the searching method is finding things properly, or just finding them at all.
+        ### Parameters:
+        ```py
+        method: Callable[[list[any], any], int] # Searching Algorithm Method.
+        ```
+    """
+    
     # Already sorted for algorithms like Binary Search #
     array_a, finding_a, idx_a = [ 0, 13, 23, 215, 532, 932], 932, 5
     array_b, finding_b, idx_b = [ 14, 29, 45, 46, 68, 92, 132 ], 29, 1
